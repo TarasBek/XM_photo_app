@@ -1,0 +1,22 @@
+<div class="header">
+  <div class="category-menu">
+    <div class="buttons">
+      <button
+        class="category-button"
+       
+        (click)="switchTab('photos')"
+        [class.active]="selectedCategory === 'photos'"
+      >
+        Photos
+      </button>
+      <button
+        class="category-button"
+       
+        (click)="switchTab('favorites')"
+        [class.active]="selectedCategory === 'favorites'"
+      >
+        Favorites
+      </button>
+    </div>
+  </div>
+</div>

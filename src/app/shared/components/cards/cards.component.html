@@ -1,0 +1,29 @@
+<div class="cards">
+  <ng-container *ngIf="data$ | async as data;">
+    <ng-container *ngIf="data.items && data.items.length > 0; else empty">
+      <ng-container *ngFor="let item of data.items">
+        <mat-card
+          (click)="onCardClick(item)"
+          class="card"
+          appearance="outlined"
+        >
+          <img
+            class="card-img"
+            mat-card-image
+            [src]="item.download_url"
+            alt="Photo"
+          />
+        </mat-card>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <div *ngIf="loader" class="loader">
+    <p-progressSpinner ariaLabel="loading" />
+  </div>
+</div>
+
+<ng-template #empty>
+  <div class="empty-message">Oops! We couldn't find any results.</div>
+</ng-template>
+
